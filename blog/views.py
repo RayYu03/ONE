@@ -1,7 +1,10 @@
+# coding:utf-8
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from blog.models import Article, Category
 import markdown2
 
+# 20160918完成
 class IndexView(ListView):
     template_name = "blog/index.html"
     context_object_name = "article_list"
@@ -15,3 +18,16 @@ class IndexView(ListView):
     def get_context_data(self, **kwargs):
         kwargs['category_list'] = Category.objects.all().order_by('name')
         return super(IndexView, self).get_context_data(**kwargs)
+
+# 20160919
+class ArticleDetailView(DetailView):
+    model = Article
+    template_name = "blog/detail.html"
+    context_object_name = "article"
+
+    pk_url_kwarg = 'article_id'
+
+    def get_object(self):
+        obj = super(ArticleDetailView,self).get_object()
+        obj.body = markdown2.markdown(obj.body)
+        return obj
