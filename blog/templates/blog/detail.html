@@ -8,7 +8,7 @@
         <section class="post-meta">
             <time class="post-date">{{ article.last_modified_time }}</time>
             in stories
-            <a href="#" rel="category">#{{ article.category.name }}</a>
+            <a href="{% url 'blog:category' article.category.pk %}">#{{ article.category.name }}</a>
         </section>
         <section class="post-content">
           {{ article.body |safe }}
