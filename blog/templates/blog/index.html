@@ -1,28 +1,26 @@
 {% extends 'base.html' %}
  {% block content %}
   <main id="content" class="content" role="main">
-      <article class="post">
-          <header class="post-header">
-              <h2 class="post-title"><a href="#">滕王阁序</a></h2>
-          </header>
-          <section class="post-excerpt">
-          豫章故郡，洪都新府。星分翼轸(zhěn)，地接衡庐。襟三江而带五湖，控蛮荆而引瓯（ōu）越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃(fān)之榻。雄州雾列，俊采星驰，台隍(huáng)枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨(qǐ )戟遥临；宇文新州之懿(yì)范，襜(chān )帷(wéi)暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电清霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。
-          <a class="read-more" href="#">»</a>
-          </section>
-          <footer class="post-meta">
-
-                  王勃,
-
-                  初唐时代的诗人，与杨炯、卢照邻、骆宾王合称“初唐四杰”。
-
-              <time class="post-date" datetime="675-09-09">
-                  9 Sep 675
-              </time>
-          </footer>
-      </article>
+     {% for article in article_list %}
+        <article class="post">
+            <header class="post-header">
+                <h2 class="post-title"><a href="#">{{ article.title }}</a></h2>
+            </header>
+            <section class="post-excerpt">
+            {{ article.abstract }}
+            <a class="read-more" href="#">  ... 阅读全文 »</a>
+            </section>
+            <footer class="post-meta">
+                嘹亮的小号
+                <time class="post-date">
+                    {{ article.last_modified_time }}
+                </time>
+            </footer>
+        </article>
+       {% endfor %}
       <nav class="pagination" role="pagination">
       <span class="page-number"> Page 1 of 3 </span>
-          <a rel="next" class="older-posts" href="#" title="Next Page">Older Posts »</a>
+          <a rel="next" class="older-posts" href="#" title="Next Page">下一页 »</a>
   </nav>
   </main>
  {% endblock %}

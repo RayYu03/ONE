@@ -33,7 +33,6 @@ class Article(models.Model):
         ('d','Draft'),
         ('p','Published'),
     )
-
     title = models.CharField('标题',max_length=50)
     body = models.TextField('正文')
     created_time = models.DateTimeField('创建时间',auto_now_add=True)
