@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
  {% block content %}
   <main id="content" class="content" role="main">
+    {% load pagination_tags %}
+    {% paginate article_list 2 %}
      {% for article in article_list %}
         <article class="post">
             <header class="post-header">
@@ -8,10 +10,10 @@
             </header>
             <section class="post-excerpt">
             {{ article.abstract }}
-            <a class="read-more" href="#">  ... 阅读全文 »</a>
+            <a class="read-more" href="{% url 'blog:detail' article.pk %}">  ... 阅读全文 »</a>
             </section>
             <footer class="post-meta">
-                嘹亮的小号
+                {{ article.author }}
                 <time class="post-date">
                     {{ article.last_modified_time }}
                 </time>
@@ -19,9 +21,6 @@
             </footer>
         </article>
        {% endfor %}
-      <nav class="pagination" role="pagination">
-      <span class="page-number"> Page 1 of 3 </span>
-          <a rel="next" class="older-posts" href="#" title="Next Page">下一页 »</a>
-  </nav>
+    {% include 'blog/pagination.html' %}
   </main>
  {% endblock %}

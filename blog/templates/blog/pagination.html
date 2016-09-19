@@ -1,0 +1,9 @@
+<nav class="pagination" role="pagination">
+    {% if article_list.has_previous %}
+        <a rel="prev" class="newer-posts" href="?page={{ article_list.previous_page_number }}" title="Previous Page">« 上一页</a>
+    {% endif %}
+<span class="page-number"> Page {{ current_page }} of {{ last_page }} </span>
+    {% if article_list.has_next %}
+        <a rel="next" class="older-posts" href="?page={{ article_list.next_page_number }}" title="Next Page">下一页 »</a>
+    {% endif %}
+</nav>

@@ -7,14 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="{% static 'blog/js/nmj4kuc.js' %}"></script>
     <style type="text/css">.tk-inconsolata{font-family:"inconsolata",sans-serif;}.tk-freight-text-pro{font-family:"freight-text-pro",serif;}.tk-industry{font-family:"industry",sans-serif;}.tk-ingra{font-family:"ingra",sans-serif;}</style><style type="text/css">@font-face{font-family:inconsolata;src:url(https://fonts.typekit.net/af/6eb605/000000000000000000012ace/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5) format("woff2");font-weight:500;font-style:normal;}@font-face{font-family:freight-text-pro;src:url(https://fonts.typekit.net/af/8a8db0/000000000000000000012059/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4) format("woff2");font-weight:400;font-style:normal;}@font-face{font-family:freight-text-pro;src:url(https://fonts.typekit.net/af/684e08/00000000000000000001205b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7) format("woff2");font-weight:700;font-style:normal;}@font-face{font-family:industry;src:url(https://fonts.typekit.net/af/24989c/0000000000000000000171f2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4) format("woff2");font-weight:400;font-style:normal;}@font-face{font-family:industry;src:url(https://fonts.typekit.net/af/aa83d8/0000000000000000000171fa/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2) format("woff2");font-weight:200;font-style:normal;}@font-face{font-family:ingra;src:url(https://fonts.typekit.net/af/961c56/00000000000000003b9acd66/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2) format("woff2");font-weight:200;font-style:normal;}@font-face{font-family:ingra;src:url(https://fonts.typekit.net/af/6f9804/00000000000000003b9acd68/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4) format("woff2");font-weight:400;font-style:normal;}</style><script>try{Typekit.load({ async: false });}catch(e){}</script>
-
     <link rel="stylesheet" href="{% static 'blog/css/screen.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/grid.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/jupyter.css' %}">
 </script>
-<script type="text/javascript" src="{% static 'blog/js/jquery.min.js' %}"></script>
     <title>
           Writings about beauty of life.
     </title>
@@ -32,12 +30,12 @@
             </h2>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="http://nijintianzhenhaokan.party//#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+    <a class="scroll-down icon-arrow-left" href="{% url 'blog:index' %}" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 {% block content %}{% endblock %}
     <footer class="site-footer clearfix">
       <section class="copyright">
-        <a href="http://nijintianzhenhaokan.party/">One day one story</a> ©
+        <a href="{% url 'blog:index' %}">One day one story</a> ©
           • All rights reserved.
       </section>
     </footer>

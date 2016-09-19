@@ -33,15 +33,17 @@ class Article(models.Model):
         ('d','Draft'),
         ('p','Published'),
     )
+
     title = models.CharField('标题',max_length=50)
     body = models.TextField('正文')
+    author = models.CharField('作者',max_length=50,default='RayYu')
     created_time = models.DateTimeField('创建时间',auto_now_add=True)
     last_modified_time = models.DateTimeField('修改时间',auto_now=True)
     status = models.CharField('文章状态',max_length=1,choices=STATUS)
 
-    # 文章摘要,允许为空,默认为正文的前54个字符
-    abstract = models.CharField('摘要',max_length=54,blank=True,null=True,
-                help_text='可选,默认为正文的前54个字符')
+    # 文章摘要,允许为空,默认为正文的前300个字符
+    abstract = models.CharField('摘要',max_length=300,blank=True,null=True,
+                help_text='可选,默认为正文的前300个字符')
 
     views = models.PositiveIntegerField('浏览量', default=0)
     likes = models.PositiveIntegerField('赞同数', default=0)
