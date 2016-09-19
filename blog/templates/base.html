@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{% static 'blog/css/screen.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'blog/css/grid.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/jupyter.css' %}">
 </script>
     <title>
@@ -18,20 +17,7 @@
     </title>
 </head>
 <body class="home-template" huaban_collector_injected="true">
-    <header class="main-header no-cover">
-    <nav class="main-nav overlay clearfix">
-        <a class="subscribe-button" href="{% url 'blog:index' %}">One day one story</a>
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">One day one story</h1>
-            <h2 class="page-description">
-                 Writings about beauty of life.
-            </h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="{% url 'blog:index' %}" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header>
+{% block header %}{% endblock %}
 {% block content %}{% endblock %}
     <footer class="site-footer clearfix">
       <section class="copyright">
@@ -39,4 +25,5 @@
           • All rights reserved.
       </section>
     </footer>
-</body></html>
+</body>
+</html>

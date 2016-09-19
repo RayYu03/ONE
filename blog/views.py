@@ -49,3 +49,16 @@ class CategoryView(ListView):
         kwargs['category_list'] = Category.objects.all().order_by('name')
         # 增加一个category_list,用于在页面显示所有分类，按照名字排序
         return super(CategoryView, self).get_context_data(**kwargs)
+
+# 20160919
+class TagsView(ListView):
+    template_name = "blog/tags.html"
+    context_object_name = "article_list"
+
+    def get_queryset(self):
+        article_list = Article.objects.filter(status='p')
+        return article_list
+
+    def get_context_data(self, **kwargs):
+        kwargs['tag_list'] = Category.objects.all().order_by('name')
+        return super(TagsView, self).get_context_data(**kwargs)

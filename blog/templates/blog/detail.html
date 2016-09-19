@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
- {% block content %}
+{% block header %}
+<header class="main-header post-head">
+<nav class="main-nav overlay clearfix left-nav">
+    <a class="back-button " href="{% url 'blog:index' %}"> « Blog Home </a>
+</nav>
+<nav class="main-nav overlay right-nav">
+  <a class="subscribe-button cta-button" href="{% url 'blog:index' %}"> READ ME </a>
+</nav>
+</header>
+{% endblock %}
+{% block content %}
 <main class="content" role="main">
     <article class="post">
         <header class="post-header">

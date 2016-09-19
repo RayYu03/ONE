@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block header %}
+<header class="main-header post-head">
+<nav class="main-nav overlay clearfix left-nav">
+    <a class="back-button " href="{% url 'blog:index' %}"> « Blog Home </a>
+</nav>
+<nav class="main-nav overlay right-nav">
+  <a class="subscribe-button cta-button" href="{% url 'blog:index' %}"> READ ME </a>
+</nav>
+</header>
+{% endblock %}
+{% block content %}
+<main class="content" role="main" left-nav>
+    <article class="post">
+      <header class="post-header">
+          <h1 class="post-title"> ALL TAGS IN BLOG</h1>
+      </header>
+      {% for tag in tag_list %}
+        <nav class="main-nav overlay clearfix"></nav>
+        <nav class="main-nav overlay clearfix left-nav">
+          <a class="subscribe-button cta-button" href="{% url 'blog:category' tag.pk %}">#{{ tag.name }}</a>
+        </nav>
+      {% endfor %}
+    </article>
+</main>
+{% endblock %}
