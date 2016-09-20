@@ -1,5 +1,4 @@
 #ONE DAY ONE STORY
-=================
 ####Powered by python 3 and django 1.10
 
 `Python3`,`Django`,`JavaScript`,`Blog`
@@ -40,13 +39,13 @@ Run
 ```
 Enter http://127.0.0.1:8000/blog/ to see homepage.
 
-**Preview:**
+## Preview:
 `homepage`
-![homepage](https://ws4.sinaimg.cn/large/647dc635jw1f8020dam4gj21h40p1jvs.jpg)
+![homepage](http://i1.piimg.com/567571/65267cea2c37f166.png)
 
 `article`
-![article](https://ws4.sinaimg.cn/large/647dc635jw1f8020m73xrj21gu0ozaiw.jpg)
+![article](http://i1.piimg.com/567571/995fb152da2f5316.png)
 
 `tags`
-![tags](https://ws1.sinaimg.cn/large/647dc635jw1f80215w76yj21hb0irq3t.jpg)
+![tags](http://i1.piimg.com/567571/756294639fe9a867.png)
 
