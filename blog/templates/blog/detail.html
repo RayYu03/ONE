@@ -2,10 +2,10 @@
 {% block header %}
 <header class="main-header post-head">
 <nav class="main-nav overlay clearfix left-nav">
-    <a class="back-button " href="{% url 'blog:index' %}"> « Blog Home </a>
+    <a class="back-button " href="{% url 'blog:index' %}"> « 返回主页 </a>
 </nav>
 <nav class="main-nav overlay right-nav">
-  <a class="subscribe-button cta-button" href="{% url 'blog:index' %}"> READ ME </a>
+  <a class="subscribe-button" href="{% url 'blog:detail' random.pk %}"> 随机文章 </a>
 </nav>
 </header>
 {% endblock %}
