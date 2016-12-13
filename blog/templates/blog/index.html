@@ -2,7 +2,7 @@
 {% block header %}
 <header class="main-header no-cover">
 <nav class="main-nav overlay clearfix">
-  <a class="back-button" href="{% url 'blog:index' %}"> 首页 </a>
+  <a class="back-button" href="{% url 'blog:home' %}"> 首页 </a>
   <a class="back-button" href="{% url 'blog:tag' %}"> 标签 </a>
   <a class="back-button" href="{% url 'blog:detail' random.pk %}"> 随机文章 </a>
 </nav>
@@ -20,7 +20,7 @@
  {% block content %}
   <main id="content" class="content" role="main">
     {% load pagination_tags %}
-    {% paginate article_list 2 %}
+    {% paginate article_list 5 %}
      {% for article in article_list %}
         <article class="post">
             <header class="post-header">

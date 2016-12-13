@@ -2,7 +2,7 @@
 {% block header %}
 <header class="main-header post-head">
 <nav class="main-nav overlay clearfix left-nav">
-    <a class="back-button " href="{% url 'blog:index' %}"> « 返回主页 </a>
+    <a class="back-button " href="{% url 'blog:home' %}"> « 返回主页 </a>
 </nav>
 <nav class="main-nav overlay right-nav">
   <a class="subscribe-button" href="{% url 'blog:detail' random.pk %}"> 随机文章 </a>
@@ -18,8 +18,8 @@
         <section class="post-meta">
             {{ article.author }}
             <time class="post-date">{{ article.last_modified_time }}</time>
-            in stories
-            <a href="{% url 'blog:category' article.category.pk %}">#{{ article.category.name }}</a>
+            in
+            <a href="{% url 'blog:category' article.category.pk %}">{{ article.category.name }}</a>
         </section>
         <section class="post-content">
           {{ article.body |safe }}

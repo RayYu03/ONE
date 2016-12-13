@@ -23,11 +23,8 @@ Install the requirements
 ```
 migrate database
 ```
-(venv)$ python manage.py shell
->>>python manage.py makemigrations
->>>python manage.py migrate
-....
->>>exit()
+>>> python manage.py migrate
+
 ```
 Create Account
 ```
@@ -37,7 +34,7 @@ Run
 ```
 (venv)$ python manage.py runserver
 ```
-Enter http://127.0.0.1:8000/blog/ to see homepage.
+Enter http://127.0.0.1:8000/ to see homepage.
 
 ## Preview:
 `homepage`
@@ -48,4 +45,3 @@ Enter http://127.0.0.1:8000/blog/ to see homepage.
 
 `tags`
 ![tags](http://i1.piimg.com/567571/756294639fe9a867.png)
-

@@ -2,10 +2,7 @@
 {% block header %}
 <header class="main-header post-head">
 <nav class="main-nav overlay clearfix left-nav">
-    <a class="back-button " href="{% url 'blog:index' %}"> « Blog Home </a>
-</nav>
-<nav class="main-nav overlay right-nav">
-  <a class="subscribe-button cta-button" href="{% url 'blog:index' %}"> READ ME </a>
+    <a class="back-button " href="{% url 'blog:index' %}"> « 返回首页 </a>
 </nav>
 </header>
 {% endblock %}
@@ -16,8 +13,7 @@
           <h1 class="post-title"> ALL TAGS IN BLOG</h1>
       </header>
       {% for tag in tag_list %}
-        <nav class="main-nav overlay clearfix"></nav>
-        <nav class="main-nav overlay clearfix left-nav">
+        <nav class="main-nav overlay clearfix">
           <a class="subscribe-button cta-button" href="{% url 'blog:category' tag.pk %}">#{{ tag.name }}</a>
         </nav>
       {% endfor %}
