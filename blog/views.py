@@ -39,7 +39,7 @@ class ArticleDetailView(DetailView):
 
 # 20160919
 class CategoryView(ListView):
-    template_name = "blog/index.html"
+    template_name = "blog/category.html"
     context_object_name = "article_list"
 
     def get_queryset(self):
